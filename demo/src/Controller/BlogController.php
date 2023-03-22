@@ -29,7 +29,7 @@ class BlogController extends AbstractController
     public function home(){
         return $this->render('blog/home.html.twig', [
             'title' => "Bienvenue",
-            'age' => 22
+            'age' => 22 
         ]);
     }
 
@@ -41,7 +41,7 @@ class BlogController extends AbstractController
             $article = new Article();
         }        
 
-        $form = $this->createForm(ArticleType::class);
+        $form = $this->createForm(ArticleType::class, $article);
 
         $form->handleRequest($request);
 
