@@ -44,7 +44,6 @@ class BlogController extends AbstractController
         $form = $this->createForm(ArticleType::class, $article);
 
         $form->handleRequest($request);
-
         if($form->isSubmitted() && $form->isValid()) {
             if(!$article->getId()){
                 $article->setCreatedAt(new \DateTime());
@@ -57,7 +56,7 @@ class BlogController extends AbstractController
         }
 
         return $this->render('blog/create.html.twig', [
-            'formArticle' =>$form->createView(),
+            'formArticle' => $form->createView(),
             'editMode' => $article->getId() !== null
         ]);
 

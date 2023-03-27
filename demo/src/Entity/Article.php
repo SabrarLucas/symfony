@@ -20,7 +20,7 @@ class Article
     #[ORM\Column(length: 255)]
     #[Assert\Length(min: 10,
                     max: 255,
-                    minMessage: 'Le titre doit avoir 10 caractères au minimum'
+                    minMessage: 'Le titre doit avoir 10 caractères au minimum',
     )]
     private ?string $title = null;
 
